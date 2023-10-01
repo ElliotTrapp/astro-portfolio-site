@@ -1,7 +1,19 @@
 ---
+import { Image } from 'astro:assets';
 import { SITE } from '~/utils/config';
+import atomImage from '~/assets/images/atom.svg';
 ---
 
-<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  🚀 {SITE?.name}
+<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white flex place-content-center">
+  <Image src={atomImage} height="28" alt="Atom Logo" class="filter-white mr-3"></Image>
+  {SITE?.name}
 </span>
+
+<style>
+  .filter-text{
+    filter: invert(90%) sepia(27%) saturate(76%) hue-rotate(180deg) brightness(97%) contrast(99%);
+  }
+  .filter-white{
+    filter: invert(100%) sepia(0%) saturate(7437%) hue-rotate(13deg) brightness(92%) contrast(110%);
+  }
+</style>
