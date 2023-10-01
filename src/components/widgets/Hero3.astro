@@ -22,9 +22,17 @@ const {
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
 } = Astro.props;
+import { getImage } from 'astro:assets';
+import myBackground from '~/assets/images/hero-bg-4.jpg';
+
+const optimizedBackground = await getImage({ src: myBackground });
 ---
 
-<section class=` h-[100dvh] bg-cover relative md:-mt-[76px] not-prose` {...id ? { id } : {}}>
+<section
+  style={`background-image: url(${optimizedBackground.src});`}
+  class=`h-[100dvh] bg-cover relative md:-mt-[76px] not-prose`
+  {...id ? { id } : {}}
+>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
