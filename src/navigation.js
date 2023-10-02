@@ -110,7 +110,7 @@ export const headerData = {
     },
   ],
   actions: [
-    { text: 'Coaching', href: '#Coaching', target: '_blank' }],
+  ]
 };
 
 export const footerData = {

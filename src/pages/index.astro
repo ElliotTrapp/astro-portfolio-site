@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -11,6 +10,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroText from '~/components/widgets/HeroBigText.astro';
 
 const metadata = {
   title: 'Elliot Trapp | Software and Mission Operations Engineer | Portfolio',
@@ -21,27 +21,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-        Elliot Trapp
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Hello, I'm Elliot. I'm a software and mission operations engineer with 4 years of experience. I enjoy solving problems to help scientists explore the universe with Python, Javascript, AWS, data science, and more.
-    </Fragment>
-  </Hero>
+  <HeroText title="Elliot Trapp" />
 
   <!-- Note Widget ******************* -->
 
