@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/HeroBigText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
@@ -23,48 +23,27 @@ const metadata = {
     id="hero"
     title="Hi, I'm Elliot."
     subtitle="I'm a software and mission operations engineer with 4 years of experience. I enjoy solving problems to help scientists explore the universe with Python, Javascript, AWS, data science, and more."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Hire me', href: '/' }]}
-  >
-    <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree
-      from New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into
-      captivating realities.
-    </Fragment>
-  </Hero>
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Contact Me Here', href: '/' },
+      { variant: 'secondary', target: '_blank', text: 'Download Resume', href: '/' },
+    ]}
+  />
 
   <!-- Content Widget **************** -->
 
   <Content
     id="about"
     columns={3}
-    items={[
-      {
-        icon: 'tabler:brand-dribbble',
-        callToAction: {
-          target: '_blank',
-          text: 'Dribbble',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-behance',
-        callToAction: {
-          target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
-    ]}
+    items={[]}
+    callToAction={{
+      variant: 'primary',
+      target: '_blank',
+      text: 'About Me',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: '~/assets/images/headshot.jpg',
       alt: 'Colorful Image',
     }}
   >

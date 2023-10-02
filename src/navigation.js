@@ -4,36 +4,19 @@ export const headerData = {
   links: [
     {
       text: 'About',
-      href: getPermalink('/homes/personal'),
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
+      href: getPermalink('/about'),
     },
     {
       text: 'Work',
-      href: getPermalink('/homes/personal'),
+      href: getPermalink('/about'),
+    },
+    {
+      text: 'Coaching',
+      href: getPermalink('/coaching'),
+    },
+    {
+      text: 'Blog',
+      href: getBlogPermalink(),
     },
     {
       text: 'Contact',
@@ -57,10 +40,6 @@ export const headerData = {
         {
           text: 'Features (Anchor Link)',
           href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
         },
         {
           text: 'Pricing',
