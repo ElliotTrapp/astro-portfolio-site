@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import Light from '~/assets/images/light.svg';
 
 import { UI } from '~/utils/config';
 
@@ -14,14 +14,29 @@ const {
   label = 'Toggle between Dark and Light mode',
   class: className = 'text-muted  focus:outline-none rounded-lg text-sm p-2.5 inline-flex items-center',
   iconClass = 'w-6 h-6',
-  iconName = 'tabler:sun',
 } = Astro.props;
 ---
 
 {
+  //TODO: Make this switch with dark mode
+  //TODO: Make this audio work
   !(UI.theme && UI.theme.endsWith(':only')) && (
-    <button type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
-      <Icon name={iconName} class={iconClass} />
+    <button id="theme_button" type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
+      <span class={iconClass} />
+      <img src={Light.src} alt="Light" />
+
+      <audio id="light_off_audio" src="~/assets/audio/light_off.mp3"  preload="auto" hidden />
+      <audio id="light_off_audio" src="~/assets/audio/light_on.mp3"  preload="auto" hidden />
     </button>
+    <script>
+  const themeButton = document.querySelector("#theme_button");
+  if (themeButton){
+    //const lightOnAudio = document.querySelector("#light_on_audio");
+    const lightOffAudio = document.querySelector("#light_off_audio");
+   // Add event listeners to fire confetti when a button is clicked.
+   if (lightOffAudio && lightOffAudio instanceof HTMLAudioElement) themeButton.addEventListener('click', () => lightOffAudio.play());
+   
+  }
+</script>
   )
 }

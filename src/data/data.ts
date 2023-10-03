@@ -5,33 +5,6 @@ import ddImg from '~/assets/images/dd.png';
 import siteImg from '~/assets/images/site.png';
 import domImg from '~/assets/images/dom-cli.png';
 
-export const links = [
-  {
-    name: 'Home',
-    hash: '#home',
-  },
-  {
-    name: 'About',
-    hash: '#about',
-  },
-  {
-    name: 'Projects',
-    hash: '#projects',
-  },
-  {
-    name: 'Skills',
-    hash: '#skills',
-  },
-  {
-    name: 'Experience',
-    hash: '#experience',
-  },
-  {
-    name: 'Contact',
-    hash: '#contact',
-  },
-] as const;
-
 // TODO: read in from a yml file
 
 export const experiencesData = [
