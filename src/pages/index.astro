@@ -2,12 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -20,6 +14,7 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
+    class="h-screen"
     id="hero"
     title="Hi, I'm Elliot."
     subtitle="I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. I love science, philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally."

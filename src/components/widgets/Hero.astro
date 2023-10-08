@@ -6,7 +6,7 @@ import type { CallToAction } from '~/types';
 export interface Props {
   id?: string;
   title?: string;
-  subtitle?: string;
+  subtitle?: string | HTMLParagraphElement;
   tagline?: string;
   content?: string;
   actions?: string | CallToAction[];
@@ -21,7 +21,7 @@ const {
 } = Astro.props;
 ---
 
-<section class=`relative mt-8` {...id ? { id } : {}}>
+<section class=`relative` {...id ? { id } : {}}>
   <div id="hero_container" class="flex flex-row p-4 m-auto">
     <div id="hero_text_block" class="flex flex-col items-start text-left justify-center">
       {
@@ -32,7 +32,7 @@ const {
           />
         )
       }
-      {subtitle && <p class="text-left text-xl text-muted mb-6 " set:html={subtitle} />}
+      {subtitle && <div class="text-left text-xl text-muted mb-6 " set:html={subtitle} />}
       {
         actions && (
           <div class="flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 items-start justify-start">
