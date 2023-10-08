@@ -34,7 +34,9 @@ const { language, textDirection } = I18N;
     <Analytics />
   </head>
 
-  <body class="antialiased m-auto max-w-7xl text-default bg-page tracking-tight">
+  <body
+    class="antialiased m-auto max-w-7xl text-default bg-page tracking-tight bg-[url('~/assets/images/bg-grain.png')] dark:bg-[url('~/assets/images/bg-grain-dark.png')] bg-contain bg-repeat"
+  >
     <slot />
 
     <BasicScripts />

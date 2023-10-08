@@ -102,7 +102,7 @@ export const footerData = {
   ],
   //TODO: Make svg change color on theme change
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(~/assets/images/atom.svg)]"></span>
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(~/assets/favicon/atom.svg)]"></span>
     Made by Elliot Trapp · All rights reserved.
   `,
 };

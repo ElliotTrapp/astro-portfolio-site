@@ -21,6 +21,34 @@ import '@fontsource-variable/inter';
 
 <style is:inline is:global>
   :root {
+    --border-color-light: #8495b9;
+    --border-color-dark: #5d73a3;
+    --bg-color-light: #ebecf0;
+    --bg-color-dark: #14303f;
+    --bg-grain-light: url('/assets/images/bg-grain.png');
+    --bg-grain-dark: url('/assets/images/bg-grain-dark.png');
+    --grid-color-light: rgba(181, 186, 198, 0.3);
+    --grid-color-dark: rgba(93, 115, 163, 0.3);
+    --text-color-light: #14303f;
+    --text-color-dark: #ffb39b;
+    --selection-bg-light: #fabb19;
+    --selection-bg-dark: #17875a;
+    --selection-text-light: var(--text-color);
+    --selection-text-dark: white;
+    --btn-bg-light: rgba(20, 48, 63, 0.08);
+    --btn-bg-dark: rgba(0, 0, 0, 0.2);
+    --focus-text-light: #14303f;
+    --focus-text-dark: white;
+    --focus-bg-light: white;
+    --focus-bg-dark: black;
+    --focus-outline-light: #5d73a3;
+    --focus-outline-dark: #fabb19;
+    --pre-bg-light: rgba(255, 255, 255, 0.4);
+    --pre-bg-dark: var(--btn-bg-dark);
+    --callout-bg-light: rgba(255, 255, 255, 0.9);
+    --callout-bg-dark: var(--btn-bg-dark);
+
+    /* Old theme */
     --light-green: #606c38;
     --dark-green: #283618;
     --off-white: #fefae0;
@@ -36,12 +64,12 @@ import '@fontsource-variable/inter';
     --aw-color-secondary: var(--light-green);
     --aw-color-accent: var(--dark-brown);
 
-    --aw-color-text-heading: var(--off-black);
-    --aw-color-text-default: var(--off-black);
+    --aw-color-text-heading: var(--text-color-light);
+    --aw-color-text-default: var(--text-color-light);
     --aw-color-text-muted: rgba(var(--off-black), 0.66);
-    --aw-color-bg-page: var(--off-white);
+    --aw-color-bg-page: var(--bg-color-light);
 
-    --aw-color-bg-page-dark: var(--off-black);
+    --aw-color-bg-page-dark: var(--bg-color-dark);
 
     ::selection {
       background-color: lavender;
@@ -57,9 +85,9 @@ import '@fontsource-variable/inter';
     --aw-color-secondary: var(--dark-green);
     --aw-color-accent: var(--light-brown);
 
-    --aw-color-text-heading: var(--off-white);
-    --aw-color-text-default: var(--off-white);
-    --aw-color-text-muted: rgba(var(--off-white), 0.66);
+    --aw-color-text-heading: var(--text-color-dark);
+    --aw-color-text-default: var(--text-color-dark);
+    --aw-color-text-muted: rgba(var(--text-color-dark), 0.66);
     --aw-color-bg-page: var(--aw-color-bg-page-dark);
 
     ::selection {
