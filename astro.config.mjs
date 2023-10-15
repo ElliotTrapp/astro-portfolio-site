@@ -40,6 +40,8 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
+        ph: ['lightbulb-bold'],
+
         'flat-color-icons': [
           'template',
           'gallery',
