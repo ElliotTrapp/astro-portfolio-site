@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
+import FeaturedProjects from '~/components/widgets/FeaturedProjects.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
@@ -14,7 +15,6 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    class="h-screen"
     id="hero"
     title="Hi, I'm Elliot."
     subtitle="I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. I love science, philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally."
@@ -23,6 +23,27 @@ const metadata = {
       { variant: 'secondary', target: '_blank', text: 'Download Resume', href: '/' },
     ]}
   />
+  <!-- FeaturedProjects Widget **************** -->
 
-  <!-- Content Widget **************** -->
+  <BlogLatestPosts
+    id="dog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
 </Layout>
