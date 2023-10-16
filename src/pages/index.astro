@@ -5,6 +5,27 @@ import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+const hero_data = {
+  title: "I write <span class='text-colorful'>flight software</span> for robotic spacecraft.",
+  subtitle:
+    "I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science, philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally.",
+  tagline: "Hi, I'm Elliot.",
+  image: {
+    src: '~/assets/images/hero/home.png',
+    alt: 'Home Hero Image',
+  },
+};
+
+const about_data = {
+  title: 'About Me',
+  content:
+    "As a software engineer at NASA JPL, I specialize in flight software, cloud infrastructure for ground data systems, information and data management, and operations. I'm deeply passionate about what I do.`, `Before software, I studied philosophy and still enraptured by the discipline. When I'm not writing software, I'll often be reading, readying, writing, or debating.",
+  image: {
+    src: '~/assets/images/personal/train_headshot.jpg',
+    alt: "Elliot's train headshot",
+  },
+};
+
 const metadata = {
   title: 'Elliot Trapp',
   ignoreTitleTemplate: false,
@@ -15,8 +36,8 @@ const metadata = {
   <!-- Hero Widget ******************* -->
   <Hero
     id="hero"
-    title="I write flight software for robotic spacecraft."
-    tagline="Hi, I'm Elliot."
+    title={hero_data.title}
+    tagline={hero_data.tagline}
     actions={[
       { variant: 'primary', target: '_blank', text: 'Contact Me', href: '/' },
       {
@@ -27,26 +48,19 @@ const metadata = {
         href: '/',
       },
     ]}
-    image={{ src: '~/assets/images/hero/home.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: hero_data.image.src, alt: hero_data.image.alt }}
   >
     <Fragment slot="subtitle">
-      I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science,
-      philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally.
+      {hero_data.subtitle}
     </Fragment>
   </Hero>
 
   <!-- Content Widget (About me) **************** -->
 
-  <Content
-    id="about"
-    image={{
-      src: '~/assets/images/personal/train_headshot.jpg',
-      alt: 'Colorful Image',
-    }}
-  >
+  <Content id="about" image={{ src: about_data.image.src, alt: about_data.image.alt }}>
     <!-- TODO: REWRITE  -->
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">About Me</h3>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">{about_data.title}</h3>
       <p>
         As a software engineer at NASA JPL, I specialize in flight software, cloud infrastructure for ground data
         systems, information and data management, and operations. I'm deeply passionate about what I do.

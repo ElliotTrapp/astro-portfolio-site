@@ -15,14 +15,17 @@
   .bg-alt {
     background-color: var(--aw-color-bg-page-alt);
   }
-  .bg-alt.dark {
-    background-color: var(--aw-color-bg-page-alt-dark);
-  }
   .text-page {
     color: var(--aw-color-text-page);
   }
   .text-muted {
     color: var(--aw-color-text-muted);
+  }
+  .text-colorful {
+    @apply text-black;
+  }
+  .dark .text-colorful {
+    @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent;
   }
 }
 

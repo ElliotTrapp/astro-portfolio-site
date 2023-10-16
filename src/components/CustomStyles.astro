@@ -21,28 +21,31 @@ import '@fontsource/poppins';
 
 <style is:inline is:global>
   :root {
+    /* Theme */
     --theme-white: #f0ebd8;
     --theme-light-blue: #748cab;
     --theme-medium-blue: #3e5c76;
     --theme-dark-blue: #1d2d44;
     --theme-black: #0d1321;
 
+    /* Font */
     --aw-font-sans: 'Poppins';
     --aw-font-serif: var(--aw-font-sans);
     --aw-font-heading: var(--aw-font-sans);
 
+    /* Primary Colors */
     --aw-color-primary: var(--theme-dark-blue);
     --aw-color-secondary: var(--theme-medium-blue);
     --aw-color-accent: var(--theme-light-blue);
 
+    /* Text */
     --aw-color-text-heading: var(--theme-black);
     --aw-color-text-default: var(--theme-black);
     --aw-color-text-muted: rgb(var(--theme-black) / 66%);
 
+    /* Background */
     --aw-color-bg-page: var(--theme-white);
     --aw-color-bg-page-alt: rgba(244, 227, 152, 0.66);
-
-    --aw-color-bg-page-dark: var(--theme-black);
 
     ::selection {
       background-color: lavender;
@@ -50,20 +53,24 @@ import '@fontsource/poppins';
   }
 
   .dark {
+    /* Font */
     --aw-font-sans: 'Poppins';
     --aw-font-serif: var(--aw-font-sans);
     --aw-font-heading: var(--aw-font-sans);
 
+    /* Primary Colors */
     --aw-color-primary: var(--theme-light-blue);
     --aw-color-secondary: var(--theme-medium-blue);
     --aw-color-accent: var(--theme-dark-blue);
 
+    /* Text */
     --aw-color-text-heading: var(--theme-white);
     --aw-color-text-default: var(--theme-white);
     --aw-color-text-muted: rgb(var(--theme-white) / 66%);
 
-    --aw-color-bg-page: var(--aw-color-bg-page-dark);
-    --aw-color-bg-page-alt: rgba(0, 0, 0, 0.647);
+    /* Background */
+    --aw-color-bg-page: var(--theme-black);
+    --aw-color-bg-page-alt: #303044;
 
     ::selection {
       background-color: black;
