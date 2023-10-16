@@ -25,28 +25,31 @@ const {
   !(UI.theme && UI.theme.endsWith(':only')) && (
     <button id="theme_button" type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
       <Icon name={iconName} class={iconClass} />
-      <audio id="light_off_audio" src="~/assets/audio/light_off.mp3" preload="auto" hidden />
-      <audio id="light_off_audio" src="~/assets/audio/light_on.mp3" preload="auto" hidden />
     </button>
   )
 }
 <script>
-  // Find all buttons with the `toggleTheme` class on the page.
-  //TODO: Make this work
-  //const lightOnAudio = document.querySelector("#light_on_audio");
-  // Add event listeners to fire confetti when a button is clicked.
-  const lightOffAudio = document.querySelector('#light_off_audio');
-  const buttons = document.querySelectorAll('#theme_button');
-  let audio = new Audio('/Users/trapper/Sites/astro-portfolio-site/src/assets/audio/light_off.mp3');
-  audio.loop = false;
+  let isDark = false;
+  const button = document.querySelector('#theme_button');
+  let offAudio = new Audio('/src/assets/audio/light_off.mp3');
+  let onAudio = new Audio('/src/assets/audio/light_on.mp3');
+  offAudio.loop = false;
+  onAudio.loop = false;
 
   // Handle clicks on each button.
-  buttons.forEach((button) => {
-    if (lightOffAudio && lightOffAudio instanceof HTMLAudioElement) {
-      button.addEventListener('click', () => audio.play());
-    }
-    // button.addEventListener('click', () => {
-    //   alert('Button was clicked!');
-    // });
-  });
+  if (offAudio && offAudio instanceof HTMLAudioElement && button) {
+    button.addEventListener('click', () => {
+      try {
+        if (isDark) {
+          offAudio.play();
+          isDark = false;
+        } else {
+          onAudio.play();
+          isDark = true;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  }
 </script>
