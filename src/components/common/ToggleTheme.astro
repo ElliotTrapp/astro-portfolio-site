@@ -13,7 +13,7 @@ export interface Props {
 const {
   label = 'Toggle between Dark and Light mode',
   class:
-    className = ' hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center',
+    className = 'toggleTheme hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center',
   iconClass = 'w-6 h-6',
   iconName = 'ph:lightbulb-bold',
 } = Astro.props;
@@ -23,8 +23,30 @@ const {
   //TODO: Get the icon to swap between light and dark mode
   //TODO: Get the sound to play when swapping themes
   !(UI.theme && UI.theme.endsWith(':only')) && (
-    <button type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
+    <button id="theme_button" type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
       <Icon name={iconName} class={iconClass} />
+      <audio id="light_off_audio" src="~/assets/audio/light_off.mp3" preload="auto" hidden />
+      <audio id="light_off_audio" src="~/assets/audio/light_on.mp3" preload="auto" hidden />
     </button>
   )
 }
+<script>
+  // Find all buttons with the `toggleTheme` class on the page.
+  //TODO: Make this work
+  //const lightOnAudio = document.querySelector("#light_on_audio");
+  // Add event listeners to fire confetti when a button is clicked.
+  const lightOffAudio = document.querySelector('#light_off_audio');
+  const buttons = document.querySelectorAll('#theme_button');
+  let audio = new Audio('/Users/trapper/Sites/astro-portfolio-site/src/assets/audio/light_off.mp3');
+  audio.loop = false;
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    if (lightOffAudio && lightOffAudio instanceof HTMLAudioElement) {
+      button.addEventListener('click', () => audio.play());
+    }
+    // button.addEventListener('click', () => {
+    //   alert('Button was clicked!');
+    // });
+  });
+</script>

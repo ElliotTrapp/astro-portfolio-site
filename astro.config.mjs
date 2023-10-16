@@ -40,7 +40,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        ph: ['lightbulb-bold', 'lightbulb-fill'],
+        ph: ['*'],
 
         'flat-color-icons': [
           'template',
