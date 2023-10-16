@@ -22,7 +22,7 @@
     color: var(--aw-color-text-muted);
   }
   .text-colorful {
-    @apply text-black;
+    @apply bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent;
   }
   .dark .text-colorful {
     @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent;
