@@ -17,8 +17,17 @@ const metadata = {
     id="hero"
     title="I write flight software for robotic spacecraft."
     tagline="Hi, I'm Elliot."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Contact Me', href: '/' }]}
-    image={{ src: '~/assets/images/home_hero.png', alt: 'AstroWind Hero Image' }}
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Contact Me', href: '/' },
+      {
+        variant: 'secondary',
+        icon: 'tabler:download',
+        target: '_blank',
+        text: 'Download Resume',
+        href: '/',
+      },
+    ]}
+    image={{ src: '~/assets/images/hero/home.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="subtitle">
       I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science,
@@ -31,24 +40,24 @@ const metadata = {
   <Content
     id="about"
     image={{
-      src: '~/assets/images/train_headshot.jpg',
+      src: '~/assets/images/personal/train_headshot.jpg',
       alt: 'Colorful Image',
     }}
   >
+    <!-- TODO: REWRITE  -->
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">About Me</h3>
-      <p>Philosophy into CS</p>
-      <br />
-
-      <p>cs into nasa</p>
-      <br />
-
       <p>
-        today + other interests When I'm not coding, I enjoy scuba diving, science-fiction and horror films, playing
-        with my dog, and the latest video games. I'm consistently engaged in learning new things. Currently, I'm
-        learning new web frameworks and putting together a side business I'm always looking to connect to other
-        developers, so feel free to reach out!
+        As a software engineer at NASA JPL, I specialize in flight software, cloud infrastructure for ground data
+        systems, information and data management, and operations. I'm deeply passionate about what I do.
       </p>
+      <br />
+      <p>
+        Before software, I studied philosophy and still enraptured by the discipline. When I'm not writing software,
+        I'll often be reading, readying, writing, or debating.
+      </p>
+      <br />
+      <p>I'm very passionate about teaching the next generation of software engineers.</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -60,8 +69,8 @@ const metadata = {
 
   <BlogLatestPosts
     id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+    title="The latest posts from my blog"
+    information={`I write about software, science, philosophy, urbanism, public transit, animal rights, and more.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0"></div>
@@ -70,26 +79,26 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
+  <!-- TODO: REWRITE  -->
   <Content
     id="porfolio"
-    title="Elevating visual narratives"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    title="Portfolio Highlights"
+    subtitle="Here are some of my favorite projects. I've worked on many more, but these are the ones I'm most proud of."
     isReversed
     items={[
       {
         title: 'Description:',
-        description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+        description: '',
       },
       {
         title: 'Role:',
         description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          'Delivered the module that ingested the realtime telemetry downlinked from the Mars Reconnaissance Orbiter (MRO) and Mars Express Orbiter (MEX). This module made it possible to visualization the positions of the orbiters supporting the Mars 2020 landing.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-      alt: 'Tech Design Image',
+      src: '~/assets/images/personal/biden.jpg',
+      alt: 'Biden image',
     }}
     callToAction={{
       target: '_blank',
@@ -100,12 +109,51 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+        Mars 2020 Landing Visualization: <br /><span class="text-2xl"
+          >Enabled the world to witness the Mars Perservernece rover's history landing</span
+        >
       </h3>
     </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-alt"></div>
+    </Fragment>
+  </Content>
+
+  <!-- TODO: REWRITE  -->
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+      },
+      {
+        title: 'Role:',
+        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/personal/srl.jpg',
+      alt: 'SRL image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Sample Return Lander Flight Software: <br /><span class="text-2xl"
+          >Developed communication software for a robotic spacecraft on Mars</span
+        >
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0"></div>
     </Fragment>
   </Content>
 
@@ -123,5 +171,8 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">Get coached</Fragment>
+    <Fragment slot="bg">
+      <div class="absolute bg-alt inset-0"></div>
+    </Fragment>
   </CallToAction>
 </Layout>
