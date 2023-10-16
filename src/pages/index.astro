@@ -4,6 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Cards from '~/components/widgets/Cards.astro';
 
 const hero_data = {
   title: "I write <span class='text-colorful'>flight software</span> for robotic spacecraft.",
@@ -90,6 +91,9 @@ const metadata = {
       <div class="absolute inset-0"></div>
     </Fragment>
   </BlogLatestPosts>
+
+  <!-- Cards Widget **************** -->
+  <Cards />
 
   <!-- Content Widget **************** -->
 
