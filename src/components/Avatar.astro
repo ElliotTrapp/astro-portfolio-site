@@ -3,11 +3,9 @@ import headSvg from '~/assets/favicons/headshot.svg';
 import { SITE } from '~/utils/config';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
+<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold whitespace-nowrap">
   <div class="flex justify-center items-center gap-8">
-    <img class="rounded-xl" src={headSvg.src} alt="headshot" width="" />
+    <img class="rounded-full" src={headSvg.src} alt="headshot" width="" />
     {SITE?.name}
   </div>
 </span>
