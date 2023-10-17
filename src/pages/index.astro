@@ -6,6 +6,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Cards from '~/components/widgets/Cards.astro';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+import Button from '~/components/ui/Button.astro';
 
 const hero_data = {
   title: "I write <span class='text-colorful'>flight software</span> for robotic spacecraft.",
@@ -18,8 +19,8 @@ const hero_data = {
   },
 };
 
-const about_data = {
-  title: 'About Me',
+const welcome_data = {
+  title: 'Welcome',
   image: {
     src: '~/assets/images/personal/train_headshot.jpg',
     alt: "Elliot's train headshot",
@@ -57,18 +58,30 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Content Widget (About me) **************** -->
+  <!-- Content Widget (Welcome message) **************** -->
 
-  <Content id="about" image={{ src: about_data.image.src, alt: about_data.image.alt }}>
-    <!-- TODO: REWRITE  -->
+  <Content
+    id="welcome"
+    image={{
+      class: '-mt-10 md:mt-auto mx-auto w-full rounded-lg bg-gray-500 shadow-lg',
+      src: welcome_data.image.src,
+      alt: welcome_data.image.alt,
+    }}
+  >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-6">{about_data.title}</h3>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl mb-6">{welcome_data.title}</h2>
       <p>
-        Hey, welcome! I'm a developer, amateur website designer, occasional writer, aspiring technical career coach, and
-        animal aficionado. I love working on creative projects as an excuse to learn new tools and frameworks. I also
-        want to write more. I setup this website as a place to share my thoughts and projects. I hope you find something
+        Hey! I'm a developer, amateur website designer, occasional writer, aspiring technical career coach, and animal
+        aficionado. I love working on creative projects as an excuse to learn new tools and frameworks. I also want to
+        write more. I setup this website as a place to share my thoughts and projects. I hope you find something
         interesting here.
       </p>
+      <div
+        id="hero_action_container"
+        class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4"
+      >
+        <Button variant="primary" text="More about me" href={getPermalink('/about')} class="sm:w-auto mt-8" />
+      </div>
     </Fragment>
 
     <Fragment slot="bg">
@@ -80,7 +93,7 @@ const metadata = {
 
   <BlogLatestPosts
     id="blog"
-    title="The latest posts from my blog"
+    title="Latest posts"
     information={`I write about software, science, philosophy, urbanism, public transit, animal rights, and more.`}
   >
     <Fragment slot="bg">
