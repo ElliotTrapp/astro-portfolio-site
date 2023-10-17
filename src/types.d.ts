@@ -273,7 +273,7 @@ export interface Cards extends Headline, Widget {
     title: string;
     description?: string;
     icon?: string;
-    image?: string | Image;
+    image?: Image;
     classes?: Record<string, string>;
   }>;
   callToAction?: string | CallToAction;

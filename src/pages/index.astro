@@ -104,11 +104,33 @@ const metadata = {
   <!-- Cards Widget **************** -->
   <Cards
     title="Projects"
-    subtitle="This is a subtitle description thingy"
+    subtitle="Here are some of my favorite projects I've worked on."
     items={[
       {
-        title: 'test',
-        description: 'this is some test conte',
+        image: {
+          src: '~/assets/images/personal/biden.jpg',
+          alt: 'Biden pic',
+        },
+        title: 'Mars 2020 Landing Visualization',
+        description:
+          'Integrated orbiter telemetry into a visualization of the Mars 2020 landing sequence. The President tweeted this picture of him watching our visualization.',
+      },
+      {
+        image: {
+          src: '~/assets/images/personal/srl.jpg',
+          alt: 'SRL pic',
+        },
+        title: 'Sample Return Lander Flight Software',
+        description: 'Developing flight software for the SRL project',
+      },
+      {
+        image: {
+          src: '~/assets/images/personal/ocs.png',
+          alt: 'SRL pic',
+        },
+        title: 'Operational Cloud Store',
+        description:
+          'Developed a data-lake supporting 27 engineering teams across the Mars 2020 and Europa Clipper projects',
       },
     ]}
   />
