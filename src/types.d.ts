@@ -268,6 +268,17 @@ export interface Steps extends Headline, Widget {
   isReversed?: boolean;
 }
 
+export interface Cards extends Headline, Widget {
+  items: Array<{
+    title: string;
+    description?: string;
+    icon?: string;
+    image?: string | Image;
+    classes?: Record<string, string>;
+  }>;
+  callToAction?: string | CallToAction;
+}
+
 export interface Content extends Headline, Widget {
   content?: string;
   image?: string | unknown;
