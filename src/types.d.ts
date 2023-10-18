@@ -127,6 +127,19 @@ export interface Stat {
   icon?: string;
 }
 
+export interface ItemTimeline {
+  title?: string;
+  description?: Array<string>;
+  institution?: string;
+  location?: string;
+  link?: string;
+  date?: string;
+  icon?: string;
+  classes?: Record<string, string>;
+  callToAction?: CallToAction;
+  image?: Image;
+}
+
 export interface Item {
   title?: string;
   description?: string;
@@ -206,6 +219,11 @@ export interface Form {
 }
 
 // WIDGETS
+export interface List extends Widget {
+  posts: Array<Post>;
+  class?: string;
+}
+
 export interface Hero extends Headline, Widget {
   content?: string;
   image?: string | unknown;
