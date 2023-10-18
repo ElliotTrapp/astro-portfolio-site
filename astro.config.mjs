@@ -86,5 +86,10 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
+    server: {
+      fs: {
+        allow: [".", "/Users/trapper/node_modules/@fontsource/poppins/files/"]
+      }
+    }
   },
 });
