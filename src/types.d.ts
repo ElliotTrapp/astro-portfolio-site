@@ -143,7 +143,7 @@ export interface ItemTimeline {
 export interface Item {
   title?: string;
   description?: string;
-  icon?: string;
+  svg?: ImageMetadata;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;

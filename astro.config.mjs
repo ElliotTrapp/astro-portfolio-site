@@ -14,6 +14,7 @@ import tasks from './src/utils/tasks';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
 import { ANALYTICS, SITE } from './src/utils/config.ts';
+import { icons } from '@iconify-json/ph/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -41,18 +42,6 @@ export default defineConfig({
       include: {
         tabler: ['*'],
         ph: ['*'],
-
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
-        ],
       },
     }),
 
