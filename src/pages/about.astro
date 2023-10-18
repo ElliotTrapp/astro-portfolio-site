@@ -1,4 +1,5 @@
 ---
+import { NASA, HERE } from 'simple-icons-astro';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -6,7 +7,6 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import bidenImg from '~/assets/images/personal/biden.jpg';
-import jiraImg from '~/assets/images/personal/jira.png';
 import srlImg from '~/assets/images/personal/srl.jpg';
 import ocsImg from '~/assets/images/personal/ocs.png';
 import domImg from '~/assets/images/personal/dom.png';
@@ -14,77 +14,6 @@ import domImg from '~/assets/images/personal/dom.png';
 const metadata = {
   title: 'about page',
 };
-
-const experiencesData = [
-  //  {
-  //    title: "Completed MA in Philosophy",
-  //    //institution: "The New School for Social Research",
-  //    location: "New York, NY",
-  //    description:
-  //      "Pursued my passion for logic, language, and ethics at the graduate level",
-  //    icon: React.createElement(LuGraduationCap),
-  //    date: "2015",
-  //  },
-  //  {
-  //    title: "Simulation Operations Specialist",
-  //    //institution: "DePaul University",
-  //    location: "Chicago, IL",
-  //    description: "Administered DePaul University's nursing simulation lab",
-  //    icon: React.createElement(LuGraduationCap),
-  //    date: "2018",
-  //  },
-  {
-    title: 'Software and Mission Operations Engineer',
-    institution: 'NASA Jet Propulsion Laboratory',
-    link: 'https://www.jpl.nasa.gov/',
-    location: 'Pasadena, CA',
-    description: [
-      'Integrated telemetry into M20 landing visualization',
-      'Developed and administered an AWS data-lake for 27 engineering teams',
-      'Adapted command schemas to meet requirements for the Sample Return Lander(SRL) project',
-      'Automated customer service processes through JIRA',
-      'Hired, mentored, and managed 4 full-time operations engineers and 3 cohorts of interns',
-    ],
-    icon: 'ph:lightbulb-fill',
-    date: '2019-Present',
-  },
-  {
-    title: 'Software Engineering Intern',
-    institution: 'NASA Johnson Space Center',
-    link: 'https://www.nasa.gov/centers/johnson/home/index.html',
-    location: 'Houston, TX',
-    description: [
-      'Authored python and MATLAB libraries to automate data cleaning, ingestion, and verification of pupillometery data',
-      'Researched the use of machine learning to predict cognitive workload of astronauts',
-    ],
-    icon: 'ph:lightbulb-fill',
-    date: '2018',
-  },
-  {
-    title: 'Software Engineering Intern',
-    institution: 'HERE Technologies',
-    link: 'https://www.here.com/',
-    location: 'Chicago, IL',
-    description: [
-      'Implemented python modules for model verification and validation',
-      'Continued honing my python & C++ skills',
-    ],
-    icon: 'ph:lightbulb-fill',
-    date: '2018',
-  },
-  {
-    title: 'MS in Computer Science',
-    institution: 'DePaul University',
-    link: 'https://www.depaul.edu/Pages/default.aspx',
-    location: 'Chicago, IL',
-    description: [
-      'Specialized in machine learning and artificial intelligence',
-      'After graduating, I immediately found a software engineering internship',
-    ],
-    icon: 'ph:lightbulb-fill',
-    date: '2018',
-  },
-];
 
 const skillsData = [
   'Python',
@@ -290,7 +219,40 @@ const skillsData = [
           'Automated customer service processes through JIRA',
           'Hired, mentored, and managed 4 full-time operations engineers and 3 cohorts of interns',
         ],
-        icon: 'tabler:briefcase',
+        icon: NASA.src,
+      },
+      {
+        title: 'Software Engineering Intern',
+        institution: 'NASA Johnson Space Center',
+        link: 'https://www.nasa.gov/centers/johnson/home/index.html',
+        location: 'Houston, TX',
+        description: [
+          'Authored python and MATLAB libraries to automate data cleaning, ingestion, and verification of pupillometery data',
+          'Researched the use of machine learning to predict cognitive workload of astronauts',
+        ],
+        icon: NASA.src,
+        date: '2018',
+      },
+      {
+        title: 'Software Engineering Intern',
+        institution: 'HERE Technologies',
+        link: 'https://www.here.com/',
+        location: 'Chicago, IL',
+        description: [
+          'Implemented python modules for model verification and validation',
+          'Continued honing my python & C++ skills',
+        ],
+        icon: HERE.src,
+        date: '2018',
+      },
+      {
+        title: 'Simulation Operations Specialist',
+        institution: 'DePaul University',
+        link: 'https://csh.depaul.edu/academics/nursing/Pages/default.aspx',
+        location: 'Chicago, IL',
+        description: "Administered DePaul University's nursing simulation lab",
+        icon: 'tabler:nurse',
+        date: '2018',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
@@ -303,12 +265,25 @@ const skillsData = [
     title="Education"
     items={[
       {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
+        title: 'MS in Computer Science',
+        institution: 'DePaul University',
+        link: 'https://www.depaul.edu/Pages/default.aspx',
+        location: 'Chicago, IL',
+        date: '2015-2018',
+        description: [
+          'Specialized in machine learning and artificial intelligence',
+          'After graduating, I immediately found a software engineering internship',
+        ],
+        icon: 'ph:graduation-cap-bold',
       },
       {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
-        icon: 'tabler:school',
+        title: 'MA in Philosophy',
+        institution: 'The New School for Social Research',
+        link: 'https://www.newschool.edu/nssr/',
+        location: 'New York, NY',
+        date: '2012-2015',
+        description: 'Pursued my passion for logic, language, and ethics at the graduate level',
+        icon: 'ph:graduation-cap-bold',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
@@ -318,46 +293,34 @@ const skillsData = [
 
   <Features3
     title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    subtitle="Discover the proficiencies that allow me to excel as an interdisciplinary software engineer."
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
-      {
-        title: 'Graphic design',
-        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
-      },
-      {
-        title: 'Branding and identity',
-        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
-      },
-      {
-        title: 'User-centered design',
-        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
-      },
-      {
-        title: 'Adobe Creative Suite',
-        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
-      },
-      {
-        title: 'Typography',
-        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
-      },
-      {
-        title: 'Color theory',
-        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
-      },
-      {
-        title: 'Print and digital design',
-        description: 'Knowledgeable in designing for both print materials and digital platforms.',
-      },
-      {
-        title: 'Attention to detail',
-        description: 'Diligent in maintaining precision and quality in all design work.',
-      },
-      {
-        title: 'Adaptability',
-        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
-      },
+      'Python',
+      'Javascript',
+      'TypeScript',
+      'Node.js',
+      'Next.js',
+      'React',
+      'TailwindCSS',
+      'AWS',
+      'Serverless',
+      'Terraform',
+      'Ruby',
+      'Perl',
+      'SQL',
+      'Docker',
+      'Puppet',
+      'Tensorflow',
+      'Keras',
+      'NumPy',
+      'Pandas',
+      'Scikit-learn',
+      'Jupyter Notebooks',
+      'Git',
+      'HTML',
+      'CSS',
     ]}
   />
 
