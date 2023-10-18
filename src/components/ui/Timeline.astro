@@ -1,10 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
-import { twMerge } from "tailwind-merge";
-import type { Item } from "~/types";
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+import type { ItemTimeline } from '~/types';
 
 export interface Props {
-  items?: Array<Item>;
+  items?: Array<ItemTimeline>;
   defaultIcon?: string;
   classes?: Record<string, string>;
 }
@@ -12,11 +12,14 @@ export interface Props {
 const { items = [], classes = {}, defaultIcon } = Astro.props as Props;
 
 const {
-  container: containerClass = "",
-  panel: panelClass = "",
-  title: titleClass = "",
-  description: descriptionClass = "",
-  icon: defaultIconClass = "text-primary dark:text-slate-200 border-primary dark:border-blue-700",
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  date: dateClass = '',
+  institution: institutionClass = '',
+  location: locationClass = '',
+  description: descriptionClass = '',
+  icon: defaultIconClass = 'text-primary dark:text-slate-200 border-primary dark:border-blue-700',
 } = classes;
 ---
 
@@ -24,53 +27,27 @@ const {
   items && items.length && (
     <div class={containerClass}>
       {items.map(
-        (
-          { title, description, icon, classes: itemClasses = {} },
-          index = 0
-        ) => (
-          <div class={twMerge("flex", panelClass, itemClasses?.panel)}>
+        ({ title, institution, link, location, date, description, icon, classes: itemClasses = {} }, index = 0) => (
+          <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
             <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
               <div>
                 <div class="flex items-center justify-center">
                   {(icon || defaultIcon) && (
                     <Icon
                       name={icon || defaultIcon}
-                      class={twMerge(
-                        "w-10 h-10 p-2 rounded-full border-2",
-                        defaultIconClass,
-                        itemClasses?.icon
-                      )}
+                      class={twMerge('w-10 h-10 p-2 rounded-full border-2', defaultIconClass, itemClasses?.icon)}
                     />
                   )}
                 </div>
               </div>
-              {index !== items.length - 1 && (
-                <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />
-              )}
+              {index !== items.length - 1 && <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
             </div>
-            <div
-              class={`pt-1 ${
-                index !== items.length - 1 ? "pb-8" : ""
-              }`}
-            >
-              {title && (
+            <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
+              {title && <h1 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
+              {institution && (
                 <p
-                  class={twMerge(
-                    "text-xl font-bold",
-                    titleClass,
-                    itemClasses?.title
-                  )}
-                  set:html={title}
-                />
-              )}
-              {description && (
-                <p
-                  class={twMerge(
-                    "text-muted mt-2",
-                    descriptionClass,
-                    itemClasses?.description
-                  )}
-                  set:html={description}
+                  class={twMerge('text-muted mt-2', institutionClass, itemClasses?.description)}
+                  set:html={institution}
                 />
               )}
             </div>
@@ -79,4 +56,17 @@ const {
       )}
     </div>
   )
+}
+
+{
+  /* TODO: Fix this
+              {location && (
+                <p class={twMerge('text-muted mt-2', locationClass, itemClasses?.description)} set:html={location} />
+              )}
+              {date && <p class={twMerge('text-muted mt-2', dateClass, itemClasses?.description)} set:html={date} />}
+
+              {description && 
+                description.map(
+                  (entry ) => ()
+              */
 }

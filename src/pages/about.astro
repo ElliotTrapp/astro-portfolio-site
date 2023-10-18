@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
@@ -12,7 +12,7 @@ import ocsImg from '~/assets/images/personal/ocs.png';
 import domImg from '~/assets/images/personal/dom.png';
 
 const metadata = {
-  title: 'work page',
+  title: 'about page',
 };
 
 const experiencesData = [
@@ -86,48 +86,6 @@ const experiencesData = [
   },
 ];
 
-const projectsData = [
-  {
-    title: 'Mars 2020 Landing Visualization Development',
-    description:
-      'Integrated orbiter telemetry into a visualization of the Mars 2020 landing sequence. The President tweeted this picture of him watching our visualization.',
-    tags: ['Javascript', 'React'],
-    imageUrl: bidenImg,
-  },
-  {
-    title: 'Sample Return Lander (SRL) Flight Software',
-    description: 'Developing flight software for the SRL project',
-    tags: ['C', 'C++', 'Python', 'Jinja2'],
-    imageUrl: srlImg,
-  },
-  {
-    title: 'Operational Cloud Store (OCS) Development',
-    description:
-      'Developed a data-lake supporting 27 engineering teams across the Mars 2020 and Europa Clipper projects',
-    tags: ['Javascript', 'Python', 'AWS', 'Serverless', 'Terraform'],
-    imageUrl: ocsImg,
-  },
-  {
-    title: 'Distributed Object Manager (DOM) Operations',
-    description: 'Lead operational support for the DOM, a distributed object store supporting 12 flight projects',
-    tags: ['Python', 'Perl', 'Bash', 'Git'],
-    imageUrl: domImg,
-  },
-  {
-    title: 'Automated JIRA Service Desk',
-    description: 'Automated customer ticket tracking and work status reporting',
-    tags: ['Jira'],
-    imageUrl: jiraImg,
-  },
-  {
-    title: 'ElliotTrapp.com',
-    description:
-      'Designed and developed this portfolio website to teach myself proper web and React development practices in my free time',
-    tags: ['TypeScript', 'React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
-    imageUrl: domImg,
-  },
-];
-
 const skillsData = [
   'Python',
   'Javascript',
@@ -158,7 +116,45 @@ const skillsData = [
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-  <Hero id="hero" title="Work" image={{ src: '~/assets/images/hero/work.png', alt: 'AstroWind Hero Image' }} />
+  <HeroText
+    id="hero"
+    title="About Me"
+    tagline="About"
+    image={{ src: '~/assets/images/hero/work.png', alt: 'Hero Image' }}
+  />
+
+  <Content
+    isReversed
+    id="welcome"
+    image={{
+      class: '-mt-10 md:mt-auto mx-auto w-full rounded-lg bg-gray-500 shadow-lg',
+      src: '/src/assets/images/personal/jsc_headshot.jpg',
+      alt: 'JSC headshot',
+    }}
+  >
+    {/*TODO: Review this text */}
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl mb-6">From Plato to Python</h2>
+      <p>
+        After graduating with a degree in Philosophy, I decided to pursue my passion for programming. I enrolled in a
+        graduate program that specialized transitioning people into software engineering. There I specialized in machine
+        learning and data science. What I love about development is that it is both rigorously technical and deeply
+        creative. I love the feeling of finally figuring out a solution to a problem. My core competencies are Python,
+        Javascript, AWS, and Terraform.. I am also familiar with TypeScript, C, C++, and Ruby. I am always looking to
+        learn new technologies.
+      </p>
+      <br />
+      <p>
+        Outside of technical skills, I am an adept communicator and leader. My background in the humanities trained me
+        to communicate my ideas clearly and concisely. One of my biggest passions is mentoring young engineering talent
+        in my organization. I love helping the next generation grow and learn.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-alt"></div>
+    </Fragment>
+  </Content>
 
   <!-- Content Widget **************** -->
   <!-- TODO: Get the image to position correctly -->
@@ -172,33 +168,25 @@ const skillsData = [
       {
         title: 'Description:',
         description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+          'Integrated orbiter telemetry into a visualization of the Mars 2020 landing sequence. The President tweeted this picture of him watching our visualization.',
       },
       {
         title: 'Role:',
         description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          'Delivered the module that ingested the realtime telemetry downlinked from the Mars Reconnaissance Orbiter (MRO) and Mars Express Orbiter (MEX). This module made it possible to visualization the positions of the orbiters supporting the Mars 2020 landing.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-      alt: 'Tech Design Image',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
+      src: bidenImg.src,
+      alt: 'Biden Mars image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
-      </h3>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Mars 2020 Landing Visualization</h3>
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-alt"></div>
+      <div class="absolute inset-0"></div>
     </Fragment>
   </Content>
 
@@ -207,33 +195,26 @@ const skillsData = [
     items={[
       {
         title: 'Description:',
-        description:
-          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
+        description: 'Developing flight software for the SRL project.',
       },
       {
         title: 'Role:',
-        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+        description: ``,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Art and Music Poster Image',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
+      src: srlImg.src,
+      alt: 'SRL image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
+        Sample Return Lander (SRL) Flight Software
       </h3>
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0"></div>
+      <div class="absolute bg-alt inset-0"></div>
     </Fragment>
   </Content>
 
@@ -243,32 +224,52 @@ const skillsData = [
     items={[
       {
         title: 'Description:',
-        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+        description: `Developed a data-lake supporting 27 engineering teams across the Mars 2020 and Europa Clipper projects.`,
       },
       {
         title: 'Role:',
-        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+        description: ``,
       },
     ]}
     image={{
-      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Fashion e-commerce Image',
+      src: ocsImg.src,
+      alt: 'OCS image',
     }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Operational Cloud Store (OCS)</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: ``,
+      },
+      {
+        title: 'Role:',
+        description: `Lead operational support for the DOM, a distributed object store supporting 12 flight projects`,
+      },
+    ]}
+    image={{
+      src: domImg.src,
+      alt: 'DOM image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+        Distributed Object Manager (DOM)
       </h3>
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-alt"></div>
+      <div class="absolute bg-alt inset-0"></div>
     </Fragment>
   </Content>
 
@@ -277,15 +278,18 @@ const skillsData = [
     title="Work experience"
     items={[
       {
-        title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        title: 'Software and Mission Operations Engineer',
+        institution: 'NASA Jet Propulsion Laboratory',
+        link: 'https://www.jpl.nasa.gov/',
+        location: 'Pasadena, CA',
+        date: '2019-Present',
+        description: [
+          'Integrated telemetry into M20 landing visualization',
+          'Developed and administered an AWS data-lake for 27 engineering teams',
+          'Adapted command schemas to meet requirements for the Sample Return Lander(SRL) project',
+          'Automated customer service processes through JIRA',
+          'Hired, mentored, and managed 4 full-time operations engineers and 3 cohorts of interns',
+        ],
         icon: 'tabler:briefcase',
       },
     ]}

@@ -23,84 +23,82 @@ const {
   <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
   <div>
-    <section id="cards" class="bg-alt">
-      <div class="max-w-6xl mx-auto px-5 py-16">
-        <div id="cards_head_content" class="text-center mb-10">
-          <Headline
-            title={title}
-            subtitle={subtitle}
-            tagline={tagline}
-            classes={{
-              title:
-                'title-font mb-4 text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none md:text-6xl',
-              subtitle: 'mt-10 text-xl',
-              ...((classes?.headline as {}) ?? {}),
-            }}
-          />
-          <div class="flex mt-6 justify-center">
-            <div id="cards_divider" class="w-16 h-1 rounded-full bg-colorful inline-flex"></div>
-          </div>
+    <section id="cards" class="bg-alt max-w-6xl mx-auto px-5 py-16">
+      <div id="cards_head_content" class="text-center mb-10">
+        <Headline
+          title={title}
+          subtitle={subtitle}
+          tagline={tagline}
+          classes={{
+            title:
+              'title-font mb-4 text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none md:text-6xl',
+            subtitle: 'mt-10 text-xl',
+            ...((classes?.headline as {}) ?? {}),
+          }}
+        />
+        <div class="flex mt-6 justify-center">
+          <div id="cards_divider" class="w-16 h-1 rounded-full bg-colorful inline-flex"></div>
         </div>
-        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-          {
-            items && items.length && (
-              <Fragment>
-                {items.map(({ title, description, icon, image, classes: itemClasses = {} }, index = 0) => (
-                  <div class="p-10 md:w-1/3 md:mb-0 mb-6 flex flex-col">
-                    <div class="pattern-dots-md gray-light">
-                      <div class="rounded bg-page p-4 transform translate-x-6 -translate-y-6">
-                        {icon && (
-                          <div
-                            id="cards_icon"
-                            class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-5 flex-shrink-0 p-2"
+      </div>
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+        {
+          items && items.length && (
+            <Fragment>
+              {items.map(({ title, description, icon, image, classes: itemClasses = {} }, index = 0) => (
+                <div class="p-10 md:w-1/3 md:mb-0 mb-6 flex flex-col">
+                  <div class="pattern-dots-md gray-light">
+                    <div class="rounded bg-page p-4 transform translate-x-6 -translate-y-6">
+                      {icon && (
+                        <div
+                          id="cards_icon"
+                          class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-5 flex-shrink-0 p-2"
+                        >
+                          <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              class="w-6 h-6"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                              />
-                            </svg>
-                          </div>
-                        )}
-                        {image && (
-                          <div
-                            id="cards_image"
-                            class="inline-flex items-center justify-center border-2 border-default rounded-lg   mb-5 flex-shrink-0 p-2"
-                          >
-                            <Image
-                              class="inline-block"
-                              src={image.src}
-                              alt={image.alt}
-                              widths={[400, 900]}
-                              sizes="(max-width: 900px) 400px, 900px"
-                              loading="eager"
-                              width={900}
-                              height={506}
-                              loading="eager"
-                              decoding="async"
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
                             />
-                          </div>
-                        )}
-                        <div id="cards_text_content" class="flex-grow">
-                          <h2 class="text-xl title-font font-medium mb-3">{title}</h2>
+                          </svg>
                         </div>
-                        <p class="leading-relaxed text-sm text-justify">{description}</p>
+                      )}
+                      {image && (
+                        <div
+                          id="cards_image"
+                          class="inline-flex items-center justify-center border-2 border-default rounded-lg   mb-5 flex-shrink-0 p-2"
+                        >
+                          <Image
+                            class="inline-block"
+                            src={image.src}
+                            alt={image.alt}
+                            widths={[400, 900]}
+                            sizes="(max-width: 900px) 400px, 900px"
+                            loading="eager"
+                            width={900}
+                            height={506}
+                            loading="eager"
+                            decoding="async"
+                          />
+                        </div>
+                      )}
+                      <div id="cards_text_content" class="flex-grow">
+                        <h2 class="text-xl title-font font-medium mb-3">{title}</h2>
                       </div>
+                      <p class="leading-relaxed text-sm text-justify">{description}</p>
                     </div>
                   </div>
-                ))}
-              </Fragment>
-            )
-          }
-        </div>
+                </div>
+              ))}
+            </Fragment>
+          )
+        }
       </div>
     </section>
   </div>
