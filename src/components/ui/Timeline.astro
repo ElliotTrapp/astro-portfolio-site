@@ -45,6 +45,17 @@ const {
                   set:html={institution}
                 />
               )}
+                {location && (
+                  <p class={twMerge('text-muted mt-2', locationClass, itemClasses?.description)} set:html={location} />
+                )}
+                {date && <p class={twMerge('text-muted mt-2', dateClass, itemClasses?.description)} set:html={date} />}
+                {description && (
+                  <p
+                    class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                    set:html={description}
+                  />
+                )}
+              </div>
             </div>
           </div>
         )
