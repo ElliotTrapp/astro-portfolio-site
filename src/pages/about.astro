@@ -10,10 +10,6 @@ import srlImg from '~/assets/images/personal/srl.jpg';
 import ocsImg from '~/assets/images/personal/ocs.png';
 import domImg from '~/assets/images/personal/dom.png';
 import jscImg from '~/assets/images/personal/jsc_headshot.jpg';
-import hereIcon from '~/assets/images/icons/here.svg';
-import nasaIcon from '~/assets/images/icons/nasa.svg';
-import nurseIcon from '~/assets/images/icons/nurse.svg';
-import gradIcon from '~/assets/images/icons/grad.svg';
 
 const metadata = {
   title: 'about page',
@@ -197,7 +193,7 @@ const metadata = {
           'Hired, mentored, and managed 4 full-time operations engineers and 3 cohorts of interns',
         ],
 
-        //icon: nasaIcon,
+        icon: 'nasa',
       },
       {
         title: 'Software Engineering Intern',
@@ -221,7 +217,7 @@ const metadata = {
           'Implemented python modules for model verification and validation',
           'Continued honing my python & C++ skills',
         ],
-        //icon: hereIcon,
+        icon: 'here',
         date: '2018',
       },
       {
@@ -230,7 +226,7 @@ const metadata = {
         link: 'https://csh.depaul.edu/academics/nursing/Pages/default.aspx',
         location: 'Chicago, IL',
         description: "Administered DePaul University's nursing simulation lab",
-        //icon: nurseIcon,
+        icon: 'nurse',
         date: '2018',
       },
     ]}
@@ -254,7 +250,7 @@ const metadata = {
           'Specialized in machine learning and artificial intelligence',
           'After graduating, I immediately found a software engineering internship',
         ],
-        ////icon: gradIcon,
+        icon: 'grad',
       },
       {
         title: 'MA in Philosophy',
@@ -263,7 +259,7 @@ const metadata = {
         location: 'New York, NY',
         date: '2012-2015',
         description: 'Pursued my passion for logic, language, and ethics at the graduate level',
-        ////icon: gradIcon,
+        icon: 'grad',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
@@ -275,7 +271,7 @@ const metadata = {
     title="Skills"
     subtitle="Discover the proficiencies that allow me to excel as an interdisciplinary software engineer."
     columns={3}
-    defaultIcon="tabler:point-filled"
+    defaultIcon="point-filled"
     items={[
       'Python',
       'Javascript',

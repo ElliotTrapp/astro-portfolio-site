@@ -45,6 +45,6 @@ export const footerData = {
     },
   ],
   socialLinks: [
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Github', icon: 'github', href: 'https://github.com/onwidget/astrowind' },
   ],
 };
