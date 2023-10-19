@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import Icon from '~/components/common/Icon.astro';
 
 import { UI } from '~/utils/config';
 
@@ -41,9 +41,11 @@ const {
     button.addEventListener('click', () => {
       try {
         if (isDark) {
+          console.debug('Dark mode');
           offAudio.play();
           isDark = false;
         } else {
+          console.debug('Light mode');
           onAudio.play();
           isDark = true;
         }

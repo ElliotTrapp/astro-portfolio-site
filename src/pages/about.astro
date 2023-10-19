@@ -189,7 +189,7 @@ const metadata = {
         link: 'https://www.jpl.nasa.gov/',
         location: 'Pasadena, CA',
         date: '2019-Present',
-        description: [
+        bullets: [
           'Integrated telemetry into M20 landing visualization',
           'Developed and administered an AWS data-lake for 27 engineering teams',
           'Adapted command schemas to meet requirements for the Sample Return Lander(SRL) project',
@@ -197,19 +197,19 @@ const metadata = {
           'Hired, mentored, and managed 4 full-time operations engineers and 3 cohorts of interns',
         ],
 
-        ////icon: nasaIcon,
+        //icon: nasaIcon,
       },
       {
         title: 'Software Engineering Intern',
         institution: 'NASA Johnson Space Center',
         link: 'https://www.nasa.gov/centers/johnson/home/index.html',
         location: 'Houston, TX',
-        description: [
+        bullets: [
           'Authored python and MATLAB libraries to automate data cleaning, ingestion, and verification of pupillometery data',
           'Researched the use of machine learning to predict cognitive workload of astronauts',
         ],
 
-        //icon: nasaIcon,
+        icon: 'nasa',
         date: '2018',
       },
       {
@@ -217,7 +217,7 @@ const metadata = {
         institution: 'HERE Technologies',
         link: 'https://www.here.com/',
         location: 'Chicago, IL',
-        description: [
+        bullets: [
           'Implemented python modules for model verification and validation',
           'Continued honing my python & C++ skills',
         ],
@@ -241,6 +241,7 @@ const metadata = {
 
   <Steps
     id="resume"
+    isReversed
     title="Education"
     items={[
       {
@@ -249,11 +250,11 @@ const metadata = {
         link: 'https://www.depaul.edu/Pages/default.aspx',
         location: 'Chicago, IL',
         date: '2015-2018',
-        description: [
+        bullets: [
           'Specialized in machine learning and artificial intelligence',
           'After graduating, I immediately found a software engineering internship',
         ],
-        //icon: gradIcon,
+        ////icon: gradIcon,
       },
       {
         title: 'MA in Philosophy',
@@ -262,7 +263,7 @@ const metadata = {
         location: 'New York, NY',
         date: '2012-2015',
         description: 'Pursued my passion for logic, language, and ethics at the graduate level',
-        //icon: gradIcon,
+        ////icon: gradIcon,
       },
     ]}
     classes={{ container: 'max-w-3xl' }}

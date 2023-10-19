@@ -8,13 +8,11 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
-import icon from 'astro-icon';
 import tasks from './src/utils/tasks';
 
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
 import { ANALYTICS, SITE } from './src/utils/config.ts';
-import { icons } from '@iconify-json/ph/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -38,13 +36,6 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
-    icon({
-      include: {
-        tabler: ['*'],
-        ph: ['*'],
-      },
-    }),
-
     ...whenExternalScripts(() =>
       partytown({
         config: { forward: ['dataLayer.push'] },
@@ -70,6 +61,10 @@ export default defineConfig({
   },
 
   vite: {
+    ssr: {
+      external: ["svgo"]
+
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
@@ -77,7 +72,6 @@ export default defineConfig({
     },
     server: {
       fs: {
-        allow: [".", "/Users/trapper/node_modules/@fontsource/poppins/files/"]
       }
     }
   },

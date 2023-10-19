@@ -129,7 +129,8 @@ export interface Stat {
 
 export interface ItemTimeline {
   title?: string;
-  description?: Array<string>;
+  description?: string;
+  bullets?: Array<string>;
   institution?: string;
   location?: string;
   link?: string;
