@@ -3,6 +3,7 @@ import { parse } from 'node-html-parser';
 
 export interface Props {
   name: string;
+  attributes: Record<string, any>; // Additional Props
 }
 
 function getSVG(name: string = 'grad') {

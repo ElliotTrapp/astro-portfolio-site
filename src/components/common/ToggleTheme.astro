@@ -24,7 +24,7 @@ const {
   //TODO: Get the sound to play when swapping themes
   !(UI.theme && UI.theme.endsWith(':only')) && (
     <button id="theme_button" type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
-      <Icon name={iconName} class={iconClass} />
+      <Icon name={iconName} attributes={{ class: { iconClass } }} />
     </button>
   )
 }

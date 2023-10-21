@@ -16,7 +16,7 @@ export const headerData = {
     },
     {
       text: 'coaching',
-      href: getPermalink('/coaching'),
+      href: 'https://www.startacodecareer.com'
     },
 
   ],
