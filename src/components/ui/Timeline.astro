@@ -47,16 +47,16 @@ const {
             </div>
             <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
               {title && <h1 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
-              {institution && (
-                <p
-                  class={twMerge('text-muted mt-2', institutionClass, itemClasses?.description)}
-                  set:html={institution}
-                />
+              <p class="mt-2 text-muted" set:html={institution} />
+              <p class="" set:html={location} />
+              <p class=" text-muted " set:html={date} />
+              {bullets && (
+                <ul class="list-disc list-inside">
+                  {bullets.map((bullet) => (
+                    <li class={'text-default mt-2'} set:html={bullet} />
+                  ))}
+                </ul>
               )}
-              {location && (
-                <p class={twMerge('text-muted mt-2', locationClass, itemClasses?.description)} set:html={location} />
-              )}
-              {date && <p class={twMerge('text-muted mt-2', dateClass, itemClasses?.description)} set:html={date} />}
             </div>
           </div>
         )

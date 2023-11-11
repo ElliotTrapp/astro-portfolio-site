@@ -1,9 +1,11 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { parse } from 'node-html-parser';
 
-export interface Props {
+export interface AttributesProps extends HTMLAttributes<'svg'> {}
+
+export interface IconProps extends HTMLAttributes<'svg'> {
   name: string;
-  attributes: Record<string, any>; // Additional Props
 }
 
 function getSVG(name: string = 'grad') {
@@ -19,6 +21,9 @@ function getSVG(name: string = 'grad') {
   const root = parse(files[filepath]);
 
   const svg = root.querySelector('svg');
+  if (svg === null) {
+    throw new Error(`${filepath} is not a valid SVG`);
+  }
   const { attributes, innerHTML } = svg;
 
   return {
@@ -27,7 +32,7 @@ function getSVG(name: string = 'grad') {
   };
 }
 
-const { name: icon, ...attributes } = Astro.props as Props;
+const { name: icon, ...attributes } = Astro.props as IconProps;
 const { attributes: baseAttributes, innerHTML } = getSVG(icon);
 
 const svgAttributes = { ...baseAttributes, ...attributes };

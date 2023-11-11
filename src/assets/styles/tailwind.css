@@ -18,9 +18,6 @@
   .text-page {
     color: var(--aw-color-text-page);
   }
-  .text-muted {
-    color: var(--aw-color-text-muted);
-  }
   .text-link {
     @apply bg-gradient-to-r from-amber-600 to-yellow-900 bg-clip-text text-transparent;
   }

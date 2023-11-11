@@ -1,7 +1,7 @@
 ---
 import Icon from '~/components/common/Icon.astro';
 import Avatar from '~/components/Avatar.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
+import ThemeButton from '~/components/common/ThemeButton.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
@@ -83,11 +83,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               {links?.length ? (
                 <>
                   <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
-                    {text}{' '}
-                    <Icon
-                      name="chevron-down"
-                      attributes={{ class: 'w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline' }}
-                    />
+                    {text} <Icon name="chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
                   <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
@@ -129,11 +125,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     >
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
-          {
-            showToggleTheme && (
-              <ToggleTheme iconClass="w-6 h-6 md:inline-block" iconName={isDark ? 'bulb-fill' : 'bulb'} />
-            )
-          }
+          {showToggleTheme && <ThemeButton />}
         </div>
       </div>
     </div>
