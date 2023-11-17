@@ -6,19 +6,19 @@ module.exports = {
     extend: {
       colors: {
         bkg: {
-          default: 'var(--color-bkg-default)',
-          muted: 'var(--color-bkg-muted)',
+          default: 'hsl(var(--color-bkg-default) / <alpha-value>)',
+          muted: 'hsl(var(--color-bkg-muted) / <alpha-value>)',
         },
         accent: {
-          1: 'var(--color-accent-1)',
-          2: 'var(--color-accent-2)',
-          3: 'var(--color-accent-3)',
+          1: 'hsl(var(--color-accent-1) / <alpha-value>)',
+          2: 'hsl(var(--color-accent-2) / <alpha-value>)',
+          3: 'hsl(var(--color-accent-3) / <alpha-value>)',
         },
         content: {
-          default: 'var(--color-content-default)',
-          muted: 'var(--color-content-muted)',
-          colorful: 'text-colorful',
-          link: 'var(--color-content-link)',
+          default: 'hsl(var(--color-content-default) / <alpha-value>)',
+          muted: 'hsl(var(--color-content-muted) / <alpha-value>)',
+          link: 'hsl(var(--color-content-link) / <alpha-value>)',
+          //colorful: 'text-colorful',
         },
       },
       fontFamily: {

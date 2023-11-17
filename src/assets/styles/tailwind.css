@@ -10,13 +10,13 @@
     --font-heading: var(--font-sans);
 
     /* Theme Colors */
-    --theme-white: #f0ebd8;
-    --theme-light-blue: #748cab;
-    --theme-medium-blue: #3e5c76;
-    --theme-dark-blue: #1d2d44;
-    --theme-black: #0d1321;
-    --theme-black-muted: #303044;
-    --theme-white-muted: #f4ce98;
+    --theme-white: 47deg 44% 89%;
+    --theme-light-blue: 214deg 25% 56%;
+    --theme-medium-blue: 208deg 31% 35%;
+    --theme-dark-blue: 215deg 40% 19%;
+    --theme-black: 222deg 43% 9%;
+    --theme-black-muted: 240deg 17% 23%;
+    --theme-white-muted: 35deg 81% 78%;
 
     /* Background */
     --color-bkg-default: var(--theme-white);
@@ -24,7 +24,7 @@
 
     /* Text */
     --color-content-default: var(--theme-black);
-    --color-content-muted: rgba(#000000); /* Background */
+    --color-content-muted: var(--theme-black-muted);
     --color-content-link: yellow; /* Background */
 
     /* Accents */
@@ -45,7 +45,7 @@
 
     /* Text */
     --color-content-default: var(--theme-white);
-    --color-content-muted: rgba(#000000); /* Background */
+    --color-content-muted: var(--theme-white-muted);
     --color-content-link: yellow; /* Background */
 
     /* Accents */
