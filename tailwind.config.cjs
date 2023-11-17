@@ -5,16 +5,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
-        default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
+        bkg: {
+          default: 'var(--color-bkg-default)',
+          muted: 'var(--color-bkg-muted)',
+        },
+        accent: {
+          1: 'var(--color-accent-1)',
+          2: 'var(--color-accent-2)',
+          3: 'var(--color-accent-3)',
+        },
+        content: {
+          default: 'var(--color-content-default)',
+          muted: 'var(--color-content-muted)',
+          colorful: 'text-colorful',
+          link: 'var(--color-content-link)',
+        },
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
+        heading: ['var(--font-heading)', ...defaultTheme.fontFamily.sans],
       },
     },
   },

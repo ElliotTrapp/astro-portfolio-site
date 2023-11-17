@@ -2,97 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Theme */
-  --theme-white: #f0ebd8;
-  --theme-light-blue: #748cab;
-  --theme-medium-blue: #3e5c76;
-  --theme-dark-blue: #1d2d44;
-  --theme-black: #0d1321;
+@layer base {
+  :root {
+    /* Font */
+    --font-sans: 'Poppins';
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
 
-  /* Font */
-  --aw-font-sans: 'Poppins';
-  --aw-font-serif: var(--aw-font-sans);
-  --aw-font-heading: var(--aw-font-sans);
+    /* Theme Colors */
+    --theme-white: #f0ebd8;
+    --theme-light-blue: #748cab;
+    --theme-medium-blue: #3e5c76;
+    --theme-dark-blue: #1d2d44;
+    --theme-black: #0d1321;
+    --theme-black-muted: #303044;
+    --theme-white-muted: #f4ce98;
 
-  /* Primary Colors */
-  --aw-color-primary: var(--theme-dark-blue);
-  --aw-color-secondary: var(--theme-medium-blue);
-  --aw-color-accent: var(--theme-light-blue);
+    /* Background */
+    --color-bkg-default: var(--theme-white);
+    --color-bkg-muted: var(--theme-white-muted);
 
-  /* Text */
-  --aw-color-text-heading: var(--theme-black);
-  --aw-color-text-default: var(--theme-black);
-  --aw-color-text-muted: rgba(#000000); /* Background */
+    /* Text */
+    --color-content-default: var(--theme-black);
+    --color-content-muted: rgba(#000000); /* Background */
+    --color-content-link: yellow; /* Background */
 
-  /* Background */
-  --aw-color-bg-page: var(--theme-white);
-  --aw-color-bg-page-alt: rgb(244, 206, 152);
+    /* Accents */
+    --color-accent-1: var(--theme-dark-blue);
+    --color-accent-2: var(--theme-medium-blue);
+    --color-accent-3: var(--theme-light-blue);
 
-  ::selection {
-    background-color: black;
-    color: white;
+    ::selection {
+      background-color: black;
+      color: white;
+    }
   }
-}
 
-.dark {
-  /* Font */
-  --aw-font-sans: 'Poppins';
-  --aw-font-serif: var(--aw-font-sans);
-  --aw-font-heading: var(--aw-font-sans);
+  .dark {
+    /* Background */
+    --color-bkg-default: var(--theme-black);
+    --color-bkg-muted: var(--theme-black-muted);
 
-  /* Primary Colors */
-  --aw-color-primary: var(--theme-light-blue);
-  --aw-color-secondary: var(--theme-medium-blue);
-  --aw-color-accent: var(--theme-dark-blue);
+    /* Text */
+    --color-content-default: var(--theme-white);
+    --color-content-muted: rgba(#000000); /* Background */
+    --color-content-link: yellow; /* Background */
 
-  /* Text */
-  --aw-color-text-heading: var(--theme-white);
-  --aw-color-text-default: var(--theme-white);
-  --aw-color-text-muted: rgba(#000000); /* Background */
+    /* Accents */
+    --color-accent-1: var(--theme-light-blue);
+    --color-accent-2: var(--theme-medium-blue);
+    --color-accent-3: var(--theme-dark-blue);
 
-  --aw-color-bg-page: var(--theme-black);
-  --aw-color-bg-page-alt: #303044;
-
-  ::selection {
-    background-color: white;
-    color: black;
+    ::selection {
+      background-color: white;
+      color: black;
+    }
   }
-}
-.bg-page {
-  background-color: var(--aw-color-bg-page);
-}
-.bg-dark {
-  background-color: var(--aw-color-bg-page-dark);
-}
-.bg-light {
-  background-color: var(--aw-color-bg-page);
-}
-.bg-alt {
-  background-color: var(--aw-color-bg-page-alt);
-}
-.text-page {
-  color: var(--aw-color-text-page);
-}
 
-.text-link {
-  @apply bg-gradient-to-r from-amber-600 to-yellow-900 bg-clip-text text-transparent;
-}
-.dark .text-link {
-  @apply bg-gradient-to-r from-amber-200 to-yellow-500 bg-clip-text text-transparent;
-}
-.aw-link-active {
-  @apply text-link;
-}
-.bg-colorful {
-  @apply bg-gradient-to-r from-blue-600 to-violet-600;
-}
-.dark .bg-colorful {
-  @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500;
-}
-.text-colorful {
-  @apply bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent;
-}
-.dark .text-colorful {
-  @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent;
+  /* FOR REFERENCE
+  .text-link {
+    @apply bg-gradient-to-r from-amber-600 to-yellow-900 bg-clip-text text-transparent;
+  }
+  .dark .text-link {
+    @apply bg-gradient-to-r from-amber-200 to-yellow-500 bg-clip-text text-transparent;
+  }
+  .bg-colorful {
+    @apply bg-gradient-to-r from-blue-600 to-violet-600;
+  }
+  .dark .bg-colorful {
+    @apply bg-gradient-to-r from-fuchsia-500 to-cyan-500;
+  }
+
+  */
 }

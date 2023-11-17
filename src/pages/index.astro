@@ -9,7 +9,8 @@ import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import Button from '~/components/ui/Button.astro';
 
 const hero_data = {
-  title: "I write <span class='text-colorful'>flight software</span> for robotic spacecraft.",
+  title:
+    "I write <span class='bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500'>flight software</span> for robotic spacecraft.",
   subtitle:
     "I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science, philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally.",
   tagline: "Hi, I'm Elliot.",
@@ -54,9 +55,19 @@ const metadata = {
     <Fragment slot="subtitle">
       I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science,
       philosophy, <u
-        ><a class="text-colorful" href={'https://www.staracodecareer.com'}>coaching aspiring developers</a></u
-      >, and vegan food. I also write on <u><a class="text-colorful" href={getBlogPermalink()}> my blog</a></u>
-      occasionally.
+        ><a
+          class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500"
+          href={'https://www.staracodecareer.com'}>coaching aspiring developers</a
+        ></u
+      >, and vegan food. I also write on <u
+        ><a
+          class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500"
+          href={getBlogPermalink()}
+        >
+          my blog</a
+        ></u
+      >
+       occasionally.
     </Fragment>
   </Hero>
 
@@ -92,7 +103,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-alt"></div>
+      <div class="absolute inset-0 bg-bkg-muted"></div>
     </Fragment>
   </Content>
 
@@ -157,7 +168,7 @@ const metadata = {
   >
     <Fragment slot="title">Get coached</Fragment>
     <Fragment slot="bg">
-      <div class="absolute bg-alt inset-0"></div>
+      <div class="absolute bg-bkg-muted inset-0"></div>
     </Fragment>
   </CallToAction>
 </Layout>
