@@ -7,50 +7,31 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Cards from '~/components/widgets/Cards.astro';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import Button from '~/components/ui/Button.astro';
-
-const hero_data = {
-  title:
-    "I write <span class='bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500'>flight software</span> for robotic spacecraft.",
-  subtitle:
-    "I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science, philosophy, coaching aspiring developers, and vegan food. I also write on my blog occasionally.",
-  tagline: "Hi, I'm Elliot.",
-  image: {
-    src: '~/assets/images/hero/home.webp',
-    alt: 'Home Hero Image',
-  },
-};
-
-const welcome_data = {
-  title: 'Welcome',
-  image: {
-    src: '~/assets/images/personal/train_headshot.jpg',
-    alt: "Elliot's train headshot",
-  },
-};
-
-const metadata = {
-  title: 'Elliot Trapp',
-  ignoreTitleTemplate: false,
-};
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={{ title: 'Elliot Trapp', ignoreTitleTemplate: false }}>
   <!-- Hero Widget ******************* -->
   <Hero
     id="hero"
-    title={hero_data.title}
-    tagline={hero_data.tagline}
+    title="I write <span class='bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500'>flight software</span> for robotic spacecraft."
+    tagline="Hi, I'm Elliot."
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Contact Me', href: 'mailto:mail@elliottrapp.com' },
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Contact Me Here',
+        href: 'mailto:mail@elliottrapp.com',
+        name: 'arrow-right',
+      },
       {
         variant: 'secondary',
-        icon: 'download',
+        name: 'download',
         target: '_blank',
         text: 'Download Resume',
         href: '/src/assets/docs/Resume.pdf',
       },
     ]}
-    image={{ src: hero_data.image.src, alt: hero_data.image.alt }}
+    image={{ src: '~/assets/images/hero/home.webp', alt: 'Home Hero Image' }}
   >
     <Fragment slot="subtitle">
       I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science,
@@ -77,12 +58,12 @@ const metadata = {
     id="welcome"
     image={{
       class: '-mt-10 md:mt-auto mx-auto w-full rounded-lg bg-gray-500 shadow-lg',
-      src: welcome_data.image.src,
-      alt: welcome_data.image.alt,
+      src: '~/assets/images/personal/train_headshot.webp',
+      alt: "Elliot's train headshot",
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl mb-6">{welcome_data.title}</h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl mb-6">Welcome</h2>
       <p>
         Hey! I'm a developer, amateur website designer, occasional writer, aspiring technical career coach, and animal
         aficionado. Working on creative projects is an excellent excuse to learn new tools and frameworks. I setup this
@@ -98,7 +79,7 @@ const metadata = {
         id="hero_action_container"
         class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4"
       >
-        <Button variant="primary" text="More about me" href={getPermalink('/about')} class="sm:w-auto mt-8" />
+        <Button variant="primary" text="More About Me" href={getPermalink('/about')} class="sm:w-auto mt-8" />
       </div>
     </Fragment>
 
@@ -122,7 +103,7 @@ const metadata = {
   <!-- Cards Widget **************** -->
   <Cards
     title="Projects"
-    subtitle="Here are some of my favorite projects I've worked on."
+    subtitle="Here are some of the projects that I've worked on."
     items={[
       {
         image: {
@@ -130,8 +111,7 @@ const metadata = {
           alt: 'Biden pic',
         },
         title: 'Mars 2020 Landing Visualization',
-        description:
-          'Integrated orbiter telemetry into a visualization of the Mars 2020 landing sequence. The President tweeted this picture of him watching our visualization.',
+        description: "Here's The President watching the visualization of the Mars 2020 landing sequence we developed.",
       },
       {
         image: {
@@ -139,7 +119,8 @@ const metadata = {
           alt: 'SRL pic',
         },
         title: 'Sample Return Lander Flight Software',
-        description: 'Developing flight software for the SRL project',
+        description:
+          "These day's I spend about have my time is dedicated to flight software development for the SRL project",
       },
       {
         image: {
@@ -148,7 +129,7 @@ const metadata = {
         },
         title: 'Operational Cloud Store',
         description:
-          'Developed a data-lake supporting 27 engineering teams across the Mars 2020 and Europa Clipper projects',
+          'I also help develop OCS, which is a data-lake supporting 27 engineering teams across the Mars 2020 and Europa Clipper projects',
       },
     ]}
   />
@@ -159,14 +140,16 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get coached',
-        href: '',
+        text: 'Contact Me Here',
+        href: 'mailto:mail@elliottrapp.com',
+        name: 'arrow-right',
         target: '_blank',
-        icon: 'download',
       },
     ]}
   >
-    <Fragment slot="title">Get coached</Fragment>
+    <Fragment slot="title">Want to Work Together?</Fragment>
+    <Fragment slot="subtitle">I'm always looking to coach aspiring software engineers</Fragment>
+
     <Fragment slot="bg">
       <div class="absolute bg-bkg-muted inset-0"></div>
     </Fragment>

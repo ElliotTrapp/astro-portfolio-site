@@ -184,7 +184,14 @@ export interface Disclaimer {
 export interface CallToAction extends HTMLAttributes<a> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   text?: string;
-  icon?: string;
+  name?: string;
+  classes?: Record<string, string>;
+}
+
+export interface ItemBoxes {
+  items?: Array<Item>;
+  columns?: number;
+  defaultIcon?: string;
   classes?: Record<string, string>;
 }
 

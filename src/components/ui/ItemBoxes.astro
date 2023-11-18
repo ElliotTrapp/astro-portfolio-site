@@ -1,0 +1,31 @@
+---
+import { twMerge } from 'tailwind-merge';
+import type { ItemBoxes } from '~/types';
+import Button from './Button.astro';
+import Icon from '~/components/common/Icon.astro';
+
+const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props as ItemBoxes;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+  icon: defaultIconClass = 'text-primary',
+  action: actionClass = '',
+} = classes;
+---
+
+{
+  items && (
+    <div class="mb-28 max-w-[50rem] scroll-mt-28 text-center sm:mb-40">
+      <ul class="flex flex-wrap items-center justify-center gap-2 text-lg text-slate-800">
+        {items.map(({ title, description, svg, callToAction, classes: itemClasses = {} }) => (
+          <li class="rounded-xl border border-black/[0.1] bg-white px-5 py-3 dark:bg-white/10 dark:text-white">
+            {title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

@@ -5,6 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        white: 'hsl(var(--theme-white) / <alpha-value>)',
+        light_blue: 'hsl(var(--theme-light-blue) / <alpha-value>)',
+        medium_blue: 'hsl(var(--theme-medium-blue) / <alpha-value>)',
+        dark_blue: 'hsl(var(--theme-dark-blue) / <alpha-value>)',
+        black: 'hsl(var(--theme-black) / <alpha-value>)',
         bkg: {
           default: 'hsl(var(--color-bkg-default) / <alpha-value>)',
           muted: 'hsl(var(--color-bkg-muted) / <alpha-value>)',

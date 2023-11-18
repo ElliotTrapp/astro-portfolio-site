@@ -1,6 +1,6 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
-import ItemGrid from '~/components/ui/ItemGrid.astro';
+import ItemBoxes from '~/components/ui/ItemBoxes.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import type { Features } from '~/types';
@@ -26,9 +26,9 @@ const {
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${
-    classes?.container ?? ''
-  }`}
+  containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : 'flex flex-col items-center justify-center'} ${
+    isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''
+  } ${classes?.container ?? ''}`}
   bg={bg}
 >
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline} />
@@ -54,7 +54,7 @@ const {
     }
   </div>
 
-  <ItemGrid
+  <ItemBoxes
     items={items}
     columns={columns}
     defaultIcon={defaultIcon}

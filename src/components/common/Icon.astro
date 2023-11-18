@@ -32,8 +32,8 @@ function getSVG(name: string = 'grad') {
   };
 }
 
-const { name: icon, ...attributes } = Astro.props as IconProps;
-const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+const { name: name, ...attributes } = Astro.props as IconProps;
+const { attributes: baseAttributes, innerHTML } = getSVG(name);
 
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---

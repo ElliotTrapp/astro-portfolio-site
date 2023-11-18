@@ -47,7 +47,7 @@ const {
               {items.map(({ title, description, icon, image, classes: itemClasses = {} }, index = 0) => (
                 <div class="p-10 md:w-1/3 md:mb-0 mb-6 flex flex-col">
                   <div class="pattern-dots-md gray-light">
-                    <div class="rounded bg-bkg-default p-4 transform translate-x-6 -translate-y-6">
+                    <div class="border border-white border-1 rounded bg-bkg-default p-4 transform translate-x-6 -translate-y-6">
                       {icon && (
                         <div
                           id="cards_icon"
@@ -72,7 +72,7 @@ const {
                       {image && (
                         <div
                           id="cards_image"
-                          class="inline-flex items-center justify-center border-2 border-default rounded-lg   mb-5 flex-shrink-0 p-2"
+                          class="inline-flex items-center justify-center  rounded-lg   mb-5 flex-shrink-0 p-2"
                         >
                           <Image
                             class="inline-block"
