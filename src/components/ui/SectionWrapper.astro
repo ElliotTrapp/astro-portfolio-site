@@ -1,0 +1,9 @@
+---
+const { id = 'section' } = Astro.props;
+---
+
+<section class="border-b relative not-prose scroll-mt-[72px]" {...id ? { id } : {}}>
+  <div class="m-auto max-w-7xl px-8 py-16" aria-hidden="true">
+    <slot />
+  </div>
+</section>

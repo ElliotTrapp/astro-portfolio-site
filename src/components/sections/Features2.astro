@@ -1,5 +1,5 @@
 ---
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import SectionWrapper from '~/components/ui/SectionWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid2 from '~/components/ui/ItemBoxes.astro';
 import type { Features } from '~/types';
@@ -19,7 +19,7 @@ const {
 } = Astro.props as Features;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<SectionWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline} />
   <ItemGrid2
     items={items}
@@ -35,4 +35,4 @@ const {
       ...((classes?.items as {}) ?? {}),
     }}
   />
-</WidgetWrapper>
+</SectionWrapper>

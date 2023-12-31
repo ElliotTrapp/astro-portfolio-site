@@ -1,5 +1,5 @@
 ---
-import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import SectionWrapper from '../ui/SectionWrapper.astro';
 import type { CallToAction, Widget } from '~/types';
 import Headline from '~/components/ui/Headline.astro';
 import Button from '~/components/ui/Button.astro';
@@ -25,7 +25,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<SectionWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline
     title={title}
     subtitle={subtitle}
@@ -51,4 +51,4 @@ const {
       </div>
     )
   }
-</WidgetWrapper>
+</SectionWrapper>

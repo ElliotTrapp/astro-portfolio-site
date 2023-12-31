@@ -25,32 +25,19 @@ export interface Props {
   id?: string;
   links?: Array<MenuLink>;
   actions?: Array<ActionLink>;
-  isSticky?: boolean;
-  isDark?: boolean;
   isFullWidth?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   position?: string;
 }
 
-const {
-  id = 'header',
-  links = [],
-  isSticky = false,
-  isDark = false,
-  isFullWidth = false,
-  showToggleTheme = false,
-  position = 'right',
-} = Astro.props;
+const { id = 'header', links = [], isFullWidth = false, showToggleTheme = false, position = 'right' } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
 <header
-  class:list={[
-    { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-bkg-default',
-  ]}
+  class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-white text-grey dark:bg-black/80 dark:text-white rounded-b-xl"
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>
@@ -148,9 +135,6 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     @apply border-b border-gray-500/20;
     box-shadow: none;
   }
-  /* #header.scroll > div:last-child {
-  @apply py-3;
-} */
 
   #header.expanded nav {
     position: fixed;
@@ -164,8 +148,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+</style>
 
-  /*
+{
+  /* 
+
 [astro-icon].icon-light > * {
   stroke-width: 1.2;
 }
@@ -173,5 +160,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 [astro-icon].icon-bold > * {
   stroke-width: 2.4;
 }
+
+  /* #header.scroll > div:last-child {
+  @apply py-3;
+} 
 */
-</style>
+}

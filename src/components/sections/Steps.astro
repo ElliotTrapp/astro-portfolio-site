@@ -1,5 +1,5 @@
 ---
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import SectionWrapper from '~/components/ui/SectionWrapper.astro';
 import Timeline from '~/components/ui/Timeline.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
@@ -20,7 +20,7 @@ const {
 } = Astro.props as Steps;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<SectionWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
     <div class:list={['md:py-4 md:self-center', { 'md:basis-1/2': image }, { 'w-full': !image }]}>
       <Headline
@@ -56,4 +56,4 @@ const {
       )
     }
   </div>
-</WidgetWrapper>
+</SectionWrapper>

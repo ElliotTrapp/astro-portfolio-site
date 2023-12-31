@@ -1,7 +1,7 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
 import ItemBoxes from '~/components/ui/ItemBoxes.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import SectionWrapper from '~/components/ui/SectionWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import type { Features } from '~/types';
 
@@ -23,7 +23,7 @@ const {
 } = Astro.props as Features;
 ---
 
-<WidgetWrapper
+<SectionWrapper
   id={id}
   isDark={isDark}
   containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : 'flex flex-col items-center justify-center'} ${
@@ -67,4 +67,4 @@ const {
       ...((classes?.items as {}) ?? {}),
     }}
   />
-</WidgetWrapper>
+</SectionWrapper>

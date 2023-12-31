@@ -9,7 +9,7 @@
     --font-serif: var(--font-sans);
     --font-heading: var(--font-sans);
 
-    /* Theme Colors */
+    /* Old Theme Colors 
     --theme-white: 47deg 44% 89%;
     --theme-light-blue: 214deg 25% 56%;
     --theme-medium-blue: 208deg 31% 35%;
@@ -17,9 +17,18 @@
     --theme-black: 222deg 43% 9%;
     --theme-black-muted: 240deg 17% 23%;
     --theme-white-muted: 35deg 81% 78%;
+    */
+
+    --theme-white: 0deg 0% 100%;
+    --theme-white-muted: 0deg 0% 85%;
+    --theme-black: 0deg 0% 10%;
+    --theme-black-muted: 0deg 0% 21%;
+    --theme-green: 183deg 31% 34%;
+    --theme-grey: 0deg 0% 85%;
+    --theme-blue: 204deg 42% 27%;
 
     /* Background */
-    --color-bkg-default: var(--theme-white);
+    --color-bkg-default: var(--theme-white-muted);
     --color-bkg-muted: var(--theme-white-muted);
 
     /* Text */
@@ -44,7 +53,7 @@
     --color-bkg-muted: var(--theme-black-muted);
 
     /* Text */
-    --color-content-default: var(--theme-white);
+    --color-content-default: var(--theme-white-muted);
     --color-content-muted: var(--theme-white-muted);
     --color-content-link: yellow; /* Background */
 

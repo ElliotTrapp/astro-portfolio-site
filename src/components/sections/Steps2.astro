@@ -1,6 +1,6 @@
 ---
 import Icon from '~/components/common/Icon.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import SectionWrapper from '~/components/ui/SectionWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Button from '~/components/ui/Button.astro';
 import type { Steps } from '~/types';
@@ -20,7 +20,7 @@ const {
 } = Astro.props as Steps;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<SectionWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div class={`flex flex-col gap-8 md:gap-12 md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''}`}>
     <div class={`w-full lg:w-1/2 gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
       <Headline
@@ -69,4 +69,4 @@ const {
       </ul>
     </div>
   </div>
-</WidgetWrapper>
+</SectionWrapper>

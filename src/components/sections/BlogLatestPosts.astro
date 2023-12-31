@@ -1,0 +1,53 @@
+---
+import { APP_BLOG } from '~/utils/config';
+
+import Grid from '~/components/blog/Grid.astro';
+import Cards from '~/components/sections/Cards.astro';
+
+import { getBlogPermalink } from '~/utils/permalinks';
+import { findLatestPosts } from '~/utils/blog';
+import SectionWrapper from '~/components/ui/SectionWrapper.astro';
+import type { Widget } from '~/types';
+
+export interface Props extends Widget {
+  title?: string;
+  linkText?: string;
+  linkUrl?: string | URL;
+  subtitle?: string;
+  count?: number;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  linkText = 'View all posts',
+  linkUrl = getBlogPermalink(),
+  subtitle = await Astro.slots.render('subtitle'),
+  count = 4,
+} = Astro.props;
+
+const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
+---
+
+{
+  APP_BLOG.isEnabled ? (
+    <Cards
+      title={title}
+      subtitle={subtitle}
+      linkText={linkText}
+      linkUrl={linkUrl}
+      items={posts.map((post) => ({
+        title: post.title,
+        description: post.excerpt,
+        image: {
+          src: post.image,
+          alt: post.title,
+        },
+        link: post.permalink,
+        tags: post.tags,
+        category: post.category,
+      }))}
+    />
+  ) : (
+    <SectionWrapper id="latest_blog_posts" />
+  )
+}

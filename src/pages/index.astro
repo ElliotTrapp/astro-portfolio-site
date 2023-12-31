@@ -1,10 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Cards from '~/components/widgets/Cards.astro';
+import Hero from '~/components/sections/Hero.astro';
+import Content from '~/components/sections/Content.astro';
+import BlogLatestPosts from '~/components/sections/BlogLatestPosts.astro';
+import CallToAction from '~/components/sections/CallToAction.astro';
+import Cards from '~/components/sections/Cards.astro';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import Button from '~/components/ui/Button.astro';
 ---
@@ -14,33 +14,16 @@ import Button from '~/components/ui/Button.astro';
   <Hero
     id="hero"
     title="I write <span class='bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500'>flight software</span> for robotic spacecraft."
-    tagline="Hi, I'm Elliot."
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Contact Me Here',
-        href: 'mailto:mail@elliottrapp.com',
-        name: 'arrow-right',
-      },
-      {
-        variant: 'secondary',
-        name: 'download',
-        target: '_blank',
-        text: 'Download Resume',
-        href: '/src/assets/docs/Resume.pdf',
-      },
-    ]}
-    image={{ src: '~/assets/images/hero/home.webp', alt: 'Home Hero Image' }}
+    tagline="Hello, I'm Elliot."
   >
     <Fragment slot="subtitle">
-      I'm a software and mission operations engineer at NASA's Jet Propulsion Laboratory. My passions include science,
-      philosophy, <u
+      I'm a Software and Mission Operations Engineer at NASA's Jet Propulsion Laboratory. My passions include science,
+      philosophy, and <u
         ><a
           class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500"
-          href={'https://www.staracodecareer.com'}>coaching aspiring developers</a
+          href={'https://www.staracodecareer.com'}>coaching aspiring developers.</a
         ></u
-      >, and vegan food. I also write on <u
+      > I also write on <u
         ><a
           class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent dark:from-fuchsia-500 dark:to-cyan-500"
           href={getBlogPermalink()}
@@ -57,7 +40,7 @@ import Button from '~/components/ui/Button.astro';
   <Content
     id="welcome"
     image={{
-      class: '-mt-10 md:mt-auto mx-auto w-full rounded-lg bg-gray-500 shadow-lg',
+      class: '-mt-10 md:mt-auto mx-auto w-full rounded-lg shadow-lg',
       src: '~/assets/images/personal/train_headshot.webp',
       alt: "Elliot's train headshot",
     }}
@@ -84,7 +67,7 @@ import Button from '~/components/ui/Button.astro';
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-bkg-muted"></div>
+      <div class="absolute inset-0"></div>
     </Fragment>
   </Content>
 
@@ -93,17 +76,15 @@ import Button from '~/components/ui/Button.astro';
   <BlogLatestPosts
     id="blog"
     title="Latest posts"
-    information={`I write about software, science, philosophy, urbanism, public transit, animal rights, and more.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0"></div>
-    </Fragment>
-  </BlogLatestPosts>
+    subtitle={`I write about software, science, philosophy, urbanism, public transit, animal rights, and more.`}
+  />
 
   <!-- Cards Widget **************** -->
   <Cards
     title="Projects"
     subtitle="Here are some of the projects that I've worked on."
+    linkText="View all projects"
+    linkUrl="#"
     items={[
       {
         image: {
@@ -148,10 +129,9 @@ import Button from '~/components/ui/Button.astro';
     ]}
   >
     <Fragment slot="title">Want to Work Together?</Fragment>
-    <Fragment slot="subtitle">I'm always looking to coach aspiring software engineers</Fragment>
-
+    <Fragment slot="subtitle">I'm always looking to collaborate and coach aspiring software engineers</Fragment>
     <Fragment slot="bg">
-      <div class="absolute bg-bkg-muted inset-0"></div>
+      <div class="absolute inset-0"></div>
     </Fragment>
   </CallToAction>
 </Layout>
